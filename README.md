@@ -16,7 +16,7 @@ Execute:
     </li>
     <li>Option 2: 
         <ul style="list-style: none;">
-            <li>python3 parse.py</li> 
+            <li>sudo python3 parse.py <h5>(sudo is necessary for unzipping files in protected directories)</h5></li> 
         </ul>
     </li>
 </ul>
