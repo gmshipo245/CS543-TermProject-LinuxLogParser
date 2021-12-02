@@ -11,9 +11,11 @@ from colors import Color
 if __name__=="__main__":
     parser = argparse.ArgumentParser(description='')
     parser.add_argument('-p', metavar='path', type=str, default="/var/log/",
-                        help='search for log files at the given path')
+                        help='search for log files at the given path')                  
     parser.add_argument('-a', action='store_true',
                         help='print all sessions sorted by login time')
+    parser.add_argument('-f', metavar='file', type=str, default="",
+                        help='print data out to file') 
 
     args = parser.parse_args()
 
@@ -41,7 +43,7 @@ if __name__=="__main__":
     for file in fileNames:
         fileData = checkLog(path,file)
         if(fileData != None):
-            if(not args.a):
+            if(not args.a and args.f == ""):
                 print(fileData)
             files.append(fileData)
     
